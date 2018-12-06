@@ -1,4 +1,6 @@
 #!/usr/bin/env python2
+# dit is een mqtt library dat snips heeft gebouwd en beschikbaar stelt.
+
 from hermes_python.hermes import Hermes
 import random
 
@@ -7,10 +9,10 @@ MQTT_PORT = 1883
 MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
 # replace `bezzam` with your username if using your own intents!!
-INTENT_START = "bezzam:start_mental_calculations"
-INTENT_ANSWER = "bezzam:give_mental_calculation"
-INTENT_STOP = "bezzam:stop_lesson"
-INTENT_DOES_NOT_KNOW = "bezzam:does_not_know_calculation"
+INTENT_START = "axello:start_quiz"
+INTENT_ANSWER = "axello:give_answer"
+INTENT_STOP = "axello:stop_lesson"
+INTENT_DOES_NOT_KNOW = "axello:do_not_know_answer"
 
 INTENT_FILTER_GET_ANSWER = [
     INTENT_ANSWER,
