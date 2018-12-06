@@ -108,8 +108,16 @@ def user_request_quiz(hermes, intent_message):
     session_id = intent_message.session_id
 
     # parse intent_message and generate response (don't forget extra space for question!)
-    n_questions = int(intent_message.slots.n_questions.first().value)
-    response
+    n_questions = int(intent_message.slots.numberOfQuestions.first().value)
+    if n_questions > 1:
+        response = "Ok, let's start the quiz with {} questions. ".format(n_questions)
+    elif n_questions == 1
+        # the space after . is necessary!
+        response = "ok, let's do one question. "
+    else
+        response = "I can on,y do a positive number of questions"
+        hermes.publish_end_session(session_id, response)
+        
 
     # create first question
     question, answer = create_question()
