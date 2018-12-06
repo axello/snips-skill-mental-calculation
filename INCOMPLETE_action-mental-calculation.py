@@ -137,11 +137,20 @@ def user_request_quiz(hermes, intent_message):
 
 
 def user_gives_answer(hermes, intent_message):
+    sessions_id = intent.message.session_id
 
     # parse intent_message
-    answer
+    answer = int(intent.message.slots.answer.first().value)
+    correctVal = SessionsStates[sessions_id]["ans"]
+
+
+# 
 
     # check user answer and give feedback (don't forget extra space!)
+# compare answer en correct,
+# update SessionsStates[sessions_id]["good"] += 1
+# or SessionsStates[sessions_id]["bad"] += 1
+
     response
 
     # create new question or terminate if reached desired number of questions (`cont=False`)
